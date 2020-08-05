@@ -31,7 +31,15 @@ const App = () => {
 
     return (
         <div className="main">
-
+            {(!loading) ? (
+                <div className="quote">
+                    <div className="quote-content">{quote}</div>
+                    <div className="quote-name">{author}</div>
+                </div>
+            ) : (
+                <h1>Loading</h1>
+            )}
+            <button onClick={handleClick}>Generate quote!</button>
         </div>
     )
 }
