@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
+    const [quote, setQuote] = useState('there goes quote')
+    const [author, setAuthor] = useState('there goes author')
     return (
-        <h1>App</h1>
+        <div className="main">
+            <h1>{quote}</h1>
+            <p>{author}</p>
+        </div>
     )
 }
 
