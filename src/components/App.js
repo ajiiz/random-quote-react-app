@@ -5,8 +5,8 @@ import Form from '../components/Form'
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
     const [author, setAuthor] = useState('there goes author')
-    const [tagName, setTagName] = useState('friendship')
-    const [allTags, setAllTags] = useState('')
+    const [tagName, setTagName] = useState('')
+    const [allTags, setAllTags] = useState([])
     const [error, setError] = useState({})
     const [loading, setLoading] = useState(false)
 
@@ -26,7 +26,7 @@ const App = () => {
             try {
                 setLoading(true)
                 setError({})
-                const response = await axios(`https://api.quotable.io/random/?tags=love`)
+                const response = await axios(`https://api.quotable.io/random/?tags=${tagName}`)
                 if(!ignore) {
                     setAuthor(response.data.author)
                     setQuote(response.data.content)
@@ -44,8 +44,10 @@ const App = () => {
         })
     }
 
-    const handleChange = () => {
-        console.log('changed')
+    const handleChange = (event) => {
+        const {value, name} = event.target
+        setTagName(value)
+        console.log(tagName)
     }
 
     return (
@@ -58,7 +60,7 @@ const App = () => {
             ) : (
                 <h1>Loading</h1>
             )}
-            <Form handleClick={handleClick} handleChange={handleChange}/>
+            <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
         </div>
     )
 }
