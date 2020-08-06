@@ -8,8 +8,8 @@ const Form = ({handleClick, handleChange, allTags}) => {
 
     return (
         <form>
-            <select defaultValue="" onChange={(event) => handleChange}>
-                <option value="Choose Tag"></option>
+            <select defaultValue="" onChange={handleChange}>
+                <option value=''>Random</option>
                 {options}
             </select>
             <button onClick={(event) => handleClick(event)}>Generate quote!</button>

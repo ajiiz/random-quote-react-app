@@ -20,13 +20,15 @@ const App = () => {
 
     const handleClick = (event) => {
         event.preventDefault()
-        console.log(allTags)
+        console.log(tagName)
         let ignore = false
         const fetchData = async() => {
             try {
                 setLoading(true)
                 setError({})
-                const response = await axios(`https://api.quotable.io/random/?tags=${tagName}`)
+                const response = (tagName!=='') ?
+                    await axios(`https://api.quotable.io/random/?tags=${tagName}`)
+                :   await axios(`https://api.quotable.io/random`)
                 if(!ignore) {
                     setAuthor(response.data.author)
                     setQuote(response.data.content)
