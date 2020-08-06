@@ -5,20 +5,24 @@ import Form from '../components/Form'
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
     const [author, setAuthor] = useState('there goes author')
-    const [tagName, setTagName] = useState('')
+    const [tagName, setTagName] = useState('friendship')
     const [error, setError] = useState({})
     const [loading, setLoading] = useState(false)
+    const [allTags, setAllTags] = useState('')
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault()
         let ignore = false
         const fetchData = async() => {
             try {
                 setLoading(true)
                 setError({})
-                const response = await axios(`https://api.quotable.io/random/query=${tagName}`)
+                const response = await axios(`https://api.quotable.io/random/?tags=love`)
                 if(!ignore) {
                     setAuthor(response.data.author)
                     setQuote(response.data.content)
+                    console.log(quote)
+                    console.log(author)
                 }
             } catch(err) {
                 setError(false)
@@ -29,10 +33,11 @@ const App = () => {
         return(() => {
             ignore = true
         })
+        console.log('clicked')
     }
 
-    const handleChange = (event) => {
-        const {name, value} = event.target
+    const handleChange = () => {
+
     }
 
     return (

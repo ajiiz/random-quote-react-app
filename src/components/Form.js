@@ -1,12 +1,9 @@
 import React from 'react'
 
-const Form = ({handleClick, handleChange}) => {
+const Form = ({handleClick, handleChange, options}) => {
     return (
         <form>
-            <select onChange={handleChange}>
-                <option></option>
-            </select>
-            <button onClick={handleClick}>Generate quote!</button>
+            <button onClick={(event) => handleClick(event)}>Generate quote!</button>
         </form>
     )
 }
