@@ -6,12 +6,21 @@ const App = () => {
     const [quote, setQuote] = useState('there goes quote')
     const [author, setAuthor] = useState('there goes author')
     const [tagName, setTagName] = useState('friendship')
+    const [allTags, setAllTags] = useState('')
     const [error, setError] = useState({})
     const [loading, setLoading] = useState(false)
-    const [allTags, setAllTags] = useState('')
+
+    useEffect(() => {
+        fetch('https://api.quotable.io/tags')
+        .then(response => response.json())
+        .then(result => {
+            setAllTags(result)
+        })
+    }, [])
 
     const handleClick = (event) => {
         event.preventDefault()
+        console.log(allTags)
         let ignore = false
         const fetchData = async() => {
             try {
@@ -33,11 +42,10 @@ const App = () => {
         return(() => {
             ignore = true
         })
-        console.log('clicked')
     }
 
     const handleChange = () => {
-
+        console.log('changed')
     }
 
     return (
