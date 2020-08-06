@@ -5,6 +5,7 @@ import Form from '../components/Form'
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
     const [author, setAuthor] = useState('there goes author')
+    const [tagName, setTagName] = useState('')
     const [error, setError] = useState({})
     const [loading, setLoading] = useState(false)
 
@@ -14,7 +15,7 @@ const App = () => {
             try {
                 setLoading(true)
                 setError({})
-                const response = await axios('https://api.quotable.io/random')
+                const response = await axios(`https://api.quotable.io/random/query=${tagName}`)
                 if(!ignore) {
                     setAuthor(response.data.author)
                     setQuote(response.data.content)
