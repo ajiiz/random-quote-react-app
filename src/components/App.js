@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
+import Form from '../components/Form'
 
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
@@ -29,6 +30,10 @@ const App = () => {
         })
     }
 
+    const handleChange = (event) => {
+        const {name, value} = event.target
+    }
+
     return (
         <div className="main">
             {(!loading) ? (
@@ -39,7 +44,7 @@ const App = () => {
             ) : (
                 <h1>Loading</h1>
             )}
-            <button onClick={handleClick}>Generate quote!</button>
+            <Form handleClick={handleClick} handleChange={handleChange}/>
         </div>
     )
 }
