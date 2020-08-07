@@ -20,7 +20,7 @@ const App = () => {
             setAllTags(result)
         })
     }, [])
-
+    // TO DO : PREVENT RENDERING SAME QUOTE AFTER ANOTHER A -> A MAKE IT WHILE(A===A) GET ANOTHER QUOTE
     const handleClick = (event) => {
         event.preventDefault()
         let ignore = false
