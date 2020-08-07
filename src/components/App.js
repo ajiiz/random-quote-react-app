@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import Form from '../components/Form'
+import Loading from '../components/Loading'
+import '../styles/app.css'
 
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
@@ -47,20 +49,20 @@ const App = () => {
     }
 
     const handleChange = (event) => {
-        const {value, name} = event.target
+        const {value} = event.target
         setTagName(value)
         console.log(tagName)
     }
 
     return (
         <div className="main">
-            {(!loading) ? (
+            {(loading) ? (
                 <div className="quote">
                     <div className="quote-content">{quote}</div>
                     <div className="quote-name">{author}</div>
                 </div>
             ) : (
-                <h1>Loading</h1>
+                <Loading />
             )}
             <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
         </div>
