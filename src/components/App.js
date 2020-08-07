@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
-import Form from '../components/Form'
+import Form from './Form/FormContainer'
 import Loading from '../components/Loading'
 import Quote from '../components/Quote'
 import '../styles/app.css'
@@ -52,7 +52,6 @@ const App = () => {
     const handleChange = (event) => {
         const {value} = event.target
         setTagName(value)
-        console.log(tagName)
     }
 
     return (

@@ -1,12 +1,7 @@
 import React from 'react'
-import "../styles/form.css"
+import "../../styles/form.css"
 
-const Form = ({handleClick, handleChange, allTags}) => {
-
-    const options = allTags.map(tag => {
-        return <option key={tag._id} value={tag.name}>{tag.name}</option>
-    })
-
+const FormComponent = ({ options, handleChange, handleClick }) => {
     return (
         <form className="form">
             <select classnName="drop-down-menu" defaultValue="" onChange={handleChange}>
@@ -18,4 +13,4 @@ const Form = ({handleClick, handleChange, allTags}) => {
     )
 }
 
-export default Form
+export default FormComponent
