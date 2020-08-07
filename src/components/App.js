@@ -56,17 +56,20 @@ const App = () => {
 
     return (
         <div className="container">
-            <main>
-                {(loading) ? (
+            <div className="main">
+                {(!loading) ? (
                     <div className="quote">
-                        <div className="quote-content">{quote}</div>
+                        <div className="quote-text">
+                            <i class="fas fa-quote-left"></i>
+                            <div className="quote-content">{quote}</div>
+                        </div>
                         <div className="quote-name">{author}</div>
+                        <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
                     </div>
                 ) : (
                     <Loading />
                 )}
-                <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
-            </main>
+            </div>
         </div>
     )
 }

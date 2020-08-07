@@ -1,95 +1,16 @@
-$size: 25px;
-$point: rgb(22, 243, 243);
-$gray1: #eee;
-$gray2: #ccc;
-$bdw: 4px;
-$big: 1.6;
-$small: 0.625;
-
-@mixin center {
-	position: absolute;
-}
-
-@keyframes rota1 {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-@keyframes rota2 {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(-360deg);
-	}
-}
-@keyframes fade {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: .2;
-	}
-}
-@keyframes bigin {
-	from {
-		transform: scale($small, $small);
-		opacity: 0.1;
-	}
-	to {
-		transform: scale(1, 1);
-		opacity: 1;
-	}
-}
-@keyframes bigout {
-	from {
-		transform: scale(1, 1);
-		opacity: 1;
-	}
-	to {
-		transform: scale($big, $big);
-		opacity: 0.1;
-	}
-}
-.animation {
-	width:50px;
-	height:50px;
-}
-.c {
-	flex-basis: 0;
-	flex-grow: 1;
-	max-width: 100%;
-	position: relative;
-	height: 200px;
-
-	> div {
-		@include center;
-	}
-}
-.bg-gray {
-	background-color: $gray1;
-}
-
-.rec {
-	width: $size;
-	height: $size;
-	border: $bdw solid $gray2;
-	box-sizing: border-box;
-}
-
-.rounded {
+.loadingspinner {
+	pointer-events: none;
+	width: 2.5em;
+	height: 2.5em;
+	border: 0.4em solid transparent;
+	border-color: #eee;
+	border-top-color: #000;
 	border-radius: 50%;
+	animation: loadingspin 1s linear infinite;
 }
-.spinner5 {
-	animation: rota1 1.3s infinite;
-	filter: blur(2px);
-	opacity: .8;
-}
-.spinner6 {
-	animation: rota2 1.3s infinite;
-	border-color: $point;
-	border-width: 2px;
+
+@keyframes loadingspin {
+	100% {
+			transform: rotate(360deg)
+	}
 }
