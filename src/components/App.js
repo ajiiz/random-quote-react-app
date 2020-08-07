@@ -1,8 +1,8 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import Form from './Form/FormContainer'
-import Loading from '../components/Loading'
-import Quote from '../components/Quote'
+import Loading from './LoadingComponent'
+import Quote from './QuoteComponent'
 import '../styles/app.css'
 
 const App = () => {
