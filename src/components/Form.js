@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/form.css"
 
 const Form = ({handleClick, handleChange, allTags}) => {
 
@@ -7,12 +8,12 @@ const Form = ({handleClick, handleChange, allTags}) => {
     })
 
     return (
-        <form>
-            <select defaultValue="" onChange={handleChange}>
-                <option value=''>Random</option>
+        <form className="form">
+            <select classnName="drop-down-menu" defaultValue="" onChange={handleChange}>
+                <option value="">Random</option>
                 {options}
             </select>
-            <button onClick={(event) => handleClick(event)}>Generate quote!</button>
+            <button className="btn" onClick={(event) => handleClick(event)}>Generate quote!</button>
         </form>
     )
 }

@@ -2,9 +2,8 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import Form from '../components/Form'
 import Loading from '../components/Loading'
+import Quote from '../components/Quote'
 import '../styles/app.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
     const [quote, setQuote] = useState('there goes quote')
@@ -61,13 +60,7 @@ const App = () => {
             <div className="main">
                 {(!loading) ? (
                     <div className="quote">
-                        <div className="quote-text">
-                            <div className="quote-content">
-                                <FontAwesomeIcon icon={faQuoteLeft} />
-                                {quote}
-                            </div>
-                        </div>
-                        <div className="quote-name">{author}</div>
+                        <Quote quote={quote} author={author}/>
                         <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
                     </div>
                 ) : (
