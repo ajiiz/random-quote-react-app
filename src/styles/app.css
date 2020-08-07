@@ -1,14 +1,12 @@
-/*body {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-items: center;
-    align-items: center;
 }
-.main {
-    height: 70%;
-    width: 70%;
-}*/
+.container {
+    border: solid black 1px;
+    margin: 100px;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
