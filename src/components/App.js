@@ -23,7 +23,6 @@ const App = () => {
 
     const handleClick = (event) => {
         event.preventDefault()
-        console.log(tagName)
         let ignore = false
         const fetchData = async() => {
             try {
@@ -35,8 +34,6 @@ const App = () => {
                 if(!ignore) {
                     setAuthor(response.data.author)
                     setQuote(response.data.content)
-                    console.log(quote)
-                    console.log(author)
                 }
             } catch(err) {
                 setError(false)
@@ -59,8 +56,16 @@ const App = () => {
             <div className="main">
                 {(!loading) ? (
                     <div className="quote">
-                        <Quote quote={quote} author={author}/>
-                        <Form handleClick={handleClick} handleChange={handleChange} allTags={allTags}/>
+                        <Quote
+                            quote={quote}
+                            author={author}
+                        />
+                        <Form
+                            handleClick={handleClick}
+                            handleChange={handleChange}
+                            allTags={allTags}
+                            tagName={tagName}
+                        />
                     </div>
                 ) : (
                     <Loading />

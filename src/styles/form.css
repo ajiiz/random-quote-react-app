@@ -1,5 +1,21 @@
 .form {
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 1em;
+}
+
+.select {
+    cursor: pointer;
+    background-color: #eeeeee;
+    width:200px;
+}
+
+.select:focus, select:hover {
+    outline: none;
+    border: 1px solid #000000;
+}
+
+.select option {
+    background-color: #ffffff;
 }
