@@ -1,6 +1,6 @@
 .quote-text {
     text-align: center;
-    padding: 25px 25px 5px 25px;
+    padding: 1em 1em 5px 1em;
 }
 
 .quote-content {
@@ -11,6 +11,7 @@
     font-size: 0.85em;
     text-align: right;
     margin: 0.4em;
+    padding-right: 1em;
 }
 
 @media (max-width: 768px) {

@@ -20,35 +20,36 @@ const App = () => {
             setAllTags(result)
         })
     }, [])
-    // TO DO : PREVENT RENDERING SAME QUOTE AFTER ANOTHER A -> A MAKE IT WHILE(A===A) GET ANOTHER QUOTE
+
     const handleClick = (event) => {
         event.preventDefault()
-        let ignore = false
-        const fetchData = async() => {
-            try {
-                setLoading(true)
-                setError({})
-                const response = (tagName!=='') ?
-                    await axios(`https://api.quotable.io/random/?tags=${tagName}`)
-                :   await axios(`https://api.quotable.io/random`)
-                if(!ignore) {
-                    setAuthor(response.data.author)
-                    setQuote(response.data.content)
-                }
-            } catch(err) {
-                setError(false)
-            }
-            setLoading(false)
-        }
         fetchData()
-        return(() => {
-            ignore = true
-        })
     }
 
     const handleChange = (event) => {
         const {value} = event.target
         setTagName(value)
+    }
+
+    const fetchData = async() => {
+        let ignore = false
+        try {
+            setLoading(true)
+            setError({})
+            const response = (tagName!=='') ?
+                await axios(`https://api.quotable.io/random/?tags=${tagName}`)
+            :   await axios(`https://api.quotable.io/random`)
+            if(!ignore) {
+                setAuthor(response.data.author)
+                setQuote(response.data.content)
+            }
+        } catch(err) {
+            setError(false)
+        }
+        setLoading(false)
+        return(() => {
+            ignore = true
+        })
     }
 
     return (
