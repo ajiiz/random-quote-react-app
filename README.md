@@ -1,3 +1,7 @@
+## Random Quote App
+
+Simple Quote Generator React App. Fetching data from Quotable API. Using simple hooks. Project made for skill testing purposes.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
