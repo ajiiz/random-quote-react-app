@@ -19,3 +19,9 @@
 .select option {
     background-color: #ffffff;
 }
+
+@media (max-width: 768px) {
+    .select {
+        width:35%;
+    }
+}

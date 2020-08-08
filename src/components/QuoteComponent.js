@@ -9,7 +9,7 @@ const Quote = ({author, quote}) => {
             <div className="quote-text">
                 <div className="quote-content">
                     <FontAwesomeIcon icon={faQuoteLeft} />
-                    {quote}
+                    {" "+quote}
                 </div>
             </div>
                 <div className="quote-name">
