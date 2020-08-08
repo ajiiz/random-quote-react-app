@@ -8,7 +8,7 @@
 .select {
     cursor: pointer;
     background-color: #eeeeee;
-    width:200px;
+    width:30%;
 }
 
 .select:focus, select:hover {

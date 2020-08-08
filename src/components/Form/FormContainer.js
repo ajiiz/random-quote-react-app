@@ -4,7 +4,9 @@ import FormComponent from './FormComponent'
 const Form = ({ handleClick, handleChange, allTags, tagName }) => {
 
     const options = allTags.map(tag => {
-        return <option key={tag._id} value={tag.name}>{tag.name}</option>
+        let name = tag.name
+        name = name[0].toUpperCase() + name.slice(1)
+        return <option key={tag._id} value={name}>{name}</option>
     })
 
     return (
