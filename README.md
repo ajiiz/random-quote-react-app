@@ -9,7 +9,7 @@
 * [Contact](#contact)
 
 ## Status
-#### Ended
+#### Published live version at: [random quote](https://ajiiz.github.io/random-quote-react-app/)
 
 ## Technologies
 #### Project is created with:
