@@ -23,8 +23,5 @@
 git clone https://github.com/ajiiz/random-quote-react-app
 ```
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
 ## Contact
 #### Contact me via e-mail: piotrwrobel.ajiiz@gmail.com
